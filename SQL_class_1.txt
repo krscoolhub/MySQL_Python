@@ -1,0 +1,21 @@
+---Create Database Command
+
+Create database BigDataBootCamp;
+Create database Test;
+
+---Get the list of existing DATABASE
+show DATABASES;
+
+---Command to Drop a DATABASE
+Drop DATABASE Test;
+
+
+---To create TABLE .go inside the particular DATABASE
+USE BigDataBootCamp;
+
+---command to create TABLE
+CREATE Table if not exists employee
+(
+    id int,
+    Name VARCHAR(50)
+);
