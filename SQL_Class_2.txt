@@ -114,6 +114,112 @@ create Table orders
 
 
 
+--- Difference b/w TRUNCATE & DROP command
+
+SELECT* from persons;
+
+TRUNCATE TABLE persons;
+
+DROP table persons;
+
+
+---Operation with SELECT command
+
+SELECT * from employee;
+DROP TABLE employee;
+
+CREATE Table if not exists employee
+(
+    id int,
+    name VARCHAR(50),
+    age INT,
+    hiring_date DATE,
+    salary INT,
+    city VARCHAR(50)
+);
+
+insert into employee VALUES(1,'shubham',25,'2022-11-10',10000,'bhagalpur');
+
+insert into employee VALUES(2,'sam',35,'2022-08-10',10800,'goa');
+insert into employee VALUES(3,'manish',29,'2022-11-01',10070,'patna');
+insert into employee VALUES(4,'rahul',30,'2022-11-12',17000,'lucknow');
+insert into employee VALUES(5,'amit',32,'2021-11-10',12000,'jamalpur');
+insert into employee VALUES(6,'shalu',20,'2020-11-10',12546,'punjab');
+insert into employee VALUES(1,'saurabh',35,'2021-10-10',10870,'delhi');
+
+SELECT* from employee;
+
+---how to count Total Records
+
+SELECT COUNT(*) FROM employee;
+
+---Alias declaration
+
+SELECT COUNT(*) as Total_Row_count FROM employee;
+
+---Display all column in the final LIST
+SELECT* from employee;
+
+---Display specific column in the final LIST
+
+SELECT name,salary from employee;
+
+
+---Alias for multiple column
+SELECT name as employee_name,salary as employee_salary from employee;
+
+SELECT* from employee;
+
+---Print unique hiring_date from the employee table when employee joined iT
+
+SELECT distinct (hiring_date) as distinct_hiring_dates from employee;
+
+SELECT* from employee;
+
+---how many unique age values in the TABLE
+
+SELECT COUNT(distinct(age)) as total_unique_ages from employee;
+
+
+
+---Increment salary of each employee by 20% and display final result with new salary
+
+SELECT  id,
+       NAME,
+       salary as old_salary,
+       (salary + salary * 0.20) as new_salary
+from employee;  
+
+---Syntax for UPDATE command
+---Update will be made for all ROWS
+
+UPDATE employee SET age = 25;
+
+SELECT*from employee;
+
+---Update the salary of employee after giving 20% AUTO_INCREMENT
+
+UPDATE employee SET salary = salary+salary*0.20;
+
+SELECT*from employee;
+
+---How to filter data using WHERE clauses
+
+SELECT*from employee WHERE hiring_date = '2022-11-10';
+
+SELECT*from employee;
+
+---Update the salary of employee who joined the company on 2022-11-10 to 80000
+
+UPDATE employee SET salary = 80000 WHERE hiring_date = '2022-11-10';
+
+SELECT*from employee;
+
+---how to delete specific record from table using delete command
+---delete records of those employees who joined company on 2022-11-10
+
+DELETE from employee WHERE hiring_date = '2022-11-10';
+
 
 
 
