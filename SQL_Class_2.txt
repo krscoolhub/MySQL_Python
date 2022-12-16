@@ -63,3 +63,57 @@ CREATE Table persons
 INSERT into persons VALUES(1,'shubham',25);
 
 
+
+SELECT*from employee;
+
+----**Create table with PRIMARY KEY****
+
+CREATE Table persons
+(
+    id INT,
+    name VARCHAR(50),
+    age INT,
+    constraint pk PRIMARY KEY(id)
+    ---primary key (id)
+);
+
+INSERT into persons VALUES(1,'shubham',25);
+
+
+ALTER Table persons add constraint age_uni UNIQUE(age);
+
+SELECT* from persons;
+
+INSERT into persons VALUES(2,'rahul',26);
+
+INSERT into persons VALUES(2,'rahul',26);
+
+INSERT into persons VALUES(3,'rahul',NULL);
+
+SELECT* from persons;
+
+
+---Create table for Foreign key Demo
+
+create Table customer
+(
+    cust_id INT,
+    name VARCHAR(50),
+    age INT,
+    constraint pk PRIMARY KEY(cust_id)
+);
+
+create Table orders
+(
+    order_id INT,
+    order_num INT,
+    customer_id INT,
+    constraint pk PRIMARY KEY(order_id),
+    constraint fk FOREIGN KEY(customer_id) REFERENCES customer(cust_id)
+);
+
+
+
+
+
+
