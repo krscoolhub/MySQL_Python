@@ -48,3 +48,18 @@ INSERT into employee VALUES(1,'shubham','nna','2022-11-11');
 SELECT*from employee;
 
 
+
+----**Create table with PRIMARY KEY****
+
+CREATE Table persons
+(
+    id INT,
+    name VARCHAR(50),
+    age INT,
+    constraint pk PRIMARY KEY(id)
+    ---primary key (id)
+);
+
+INSERT into persons VALUES(1,'shubham',25);
+
+
