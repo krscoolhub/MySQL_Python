@@ -1,0 +1,25 @@
+CREATE DATABASE sam;
+
+USE sam;
+
+CREATE Table if not exists employee
+(
+    id int,
+    name VARCHAR(50),
+    address VARCHAR(50),
+    city VARCHAR(50)
+);
+
+INSERT INTO employee VALUES(1,'shubham','nna','bhagalpur');
+
+SELECT*from employee;
+
+--- Add new column DOB in TABLE
+
+ALTER Table employee ADD DOB DATE;
+
+SELECT*from employee;
+
+--- Modify existing column in a Table or CHANGE datatype of name column or increase length of name column
+
+ALTER Table employee MODIFY COLUMN name VARCHAR(200);
