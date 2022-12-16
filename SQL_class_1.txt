@@ -95,3 +95,6 @@ INSERT into employee_with_constraints VALUES(7,'kumar',10000,null);
 INSERT into employee_with_constraints(id,Name,salary) VALUES(8,'kumar',10000);
 
 SELECT *from employee_with_constraints
+
+
+
