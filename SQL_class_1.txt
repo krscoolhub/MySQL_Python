@@ -19,3 +19,79 @@ CREATE Table if not exists employee
     id int,
     Name VARCHAR(50)
 );
+
+
+
+---Command to lIst down all the TABLE
+SHOW Tables;
+
+---Command to lIst down all the TABLE
+show create TABLE employee;
+
+
+---command to delete the TABLE
+DROP Table employee;
+
+---command to create TABLE
+CREATE Table if not exists employee
+(
+    id int,
+    Name VARCHAR(50),
+    salary DOUBLE,
+    hiring_date DATE
+
+);
+
+---Syntax 1 to insert data into table
+INSERT INTO employee VALUES(1,"shubham",10000,"2022-12-16");
+
+
+---Syntax 2 to insert data into table
+INSERT INTO employee(salary,Name,id)VALUES(12000,"kumar",2);
+
+---Insert multiple rows using single insert statement
+
+INSERT INTO employee VALUES(1,"shubham",10000,"2022-12-16"),(3,"shub",10001,"2022-12-17"),(4,"shubh",10004,"2022-12-12");
+
+---Use SELECT command to query the DATA
+SELECT*from employee;
+
+
+---Example for INTEGRITY CONSTRAINT
+
+CREATE Table if not exists employee_with_constraints
+(
+    id int NOT NULL,
+    Name VARCHAR(50) NOT NULL,
+    salary DOUBLE,
+    hiring_date DATE DEFAULT '2022-01-12',
+    UNIQUE(id),
+    CHECK (salary > 1000)
+);
+
+---Example 1 for Integrity constraint failure
+---Exception will be thrown .>>>Column 'id' cannot be null
+INSERT into employee_with_constraints VALUES(null,"shubham",10000,"2022-12-16");
+
+---Example 2 for Integrity constraint failure
+---Exception will be thrown .>>>Column 'Name' cannot be null
+INSERT into employee_with_constraints VALUES(1,null,10000,"2022-12-16");
+
+---Example 3 for Integrity constraint failure
+---Exception will be thrown .>>>Check constraint 'employee_with_constraints_chk_1' is violated.
+INSERT into employee_with_constraints VALUES(1,'kumar',100,"2022-12-16");
+
+---Insert correct DATA
+INSERT into employee_with_constraints VALUES(5,'kumar',10000,"2022-12-16");
+
+---Example 4 for Integrity constraint failure
+---Exception will be thrown .>>>Duplicate entry '5' for key 'employee_with_constraints.id
+INSERT into employee_with_constraints VALUES(5,'kumar',10000,"2022-12-16");
+
+---Example 5 for Integrity constraint failure
+---Exception will be thrown .>>>Duplicate entry '7' for key 'employee_with_constraints.id
+INSERT into employee_with_constraints VALUES(7,'kumar',10000,null);
+---Give default value hiring date
+INSERT into employee_with_constraints(id,Name,salary) VALUES(8,'kumar',10000);
+
+SELECT *from employee_with_constraints
