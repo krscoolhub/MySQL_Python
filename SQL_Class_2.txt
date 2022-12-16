@@ -23,3 +23,28 @@ SELECT*from employee;
 --- Modify existing column in a Table or CHANGE datatype of name column or increase length of name column
 
 ALTER Table employee MODIFY COLUMN name VARCHAR(200);
+
+
+-- delete existing column from given TABLE
+
+ALTER table employee DROP COLUMN city;
+
+--- Rename the column name to Full_Name
+
+ALTER table employee RENAME COLUMN name to Full_Name;
+
+
+
+
+--- Add unique integrity constraint on id COLUMN
+alter Table employee add constraint id_unique UNIQUE(id);
+
+--- Drop CONSTRAINT from existing TABLE
+
+ALTER Table employee DROP constraint id_unique;
+
+INSERT into employee VALUES(1,'shubham','nna','2022-11-11');
+
+SELECT*from employee;
+
+
