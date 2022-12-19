@@ -1,1 +1,29 @@
+CREATE DATABASE sam;
 
+USE sam;
+CREATE Table if not exists employee
+(
+    id int,
+    name VARCHAR(50),
+    age INT,
+    hiring_date DATE,
+    salary INT,
+    city VARCHAR(50)
+);
+
+insert into employee VALUES(1,'shubham',25,'2022-11-10',10000,'bhagalpur');
+
+insert into employee VALUES(2,'sam',35,'2022-08-10',10800,'goa');
+insert into employee VALUES(3,'manish',29,'2022-11-01',10070,'patna');
+insert into employee VALUES(4,'rahul',30,'2022-11-12',17000,'lucknow');
+insert into employee VALUES(5,'amit',32,'2021-11-10',12000,'jamalpur');
+insert into employee VALUES(6,'shalu',20,'2020-11-10',12546,'punjab');
+SELECT*from employee;
+
+---How to perform multi UPDATES
+
+update employee set age =20,salary = 20000 where hiring_date ="2020-11-10";
+select*from employee;
+
+---Use of Limit keyword
+select*from employee limit 2;
