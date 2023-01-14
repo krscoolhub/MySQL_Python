@@ -1,0 +1,78 @@
+RDBMS
+A relational database management system (RDBMS) is a type of software that is used to manage and organize data stored in relational databases.
+RDBMSs provide users with a way to create, read, update, and delete data in a structured and organized manner, using SQL (Structured Query Language) as the main interface
+for interacting with the data. Some popular examples of RDBMSs include MySQL, Oracle, and Microsoft SQL Server.
+
+
+CRUD Operation:
+CRUD stands for Create, Read, Update, and Delete. These are the four basic functions of persistent storage, a fundamental concept in computer science and software engineering. In the context of a relational database management system (RDBMS), CRUD operations are used to interact with data stored in a database.
+
+Create - Adding new data to the database
+Read - Retrieving existing data from the database
+Update - Modifying existing data in the database
+Delete - Removing existing data from the database
+
+These operations are implemented using SQL (Structured Query Language) statements such as SELECT, INSERT, UPDATE and DELETE.
+
+
+
+ACID Property of RDBMS:
+
+ACID is an acronym that stands for Atomicity, Consistency, Isolation, and Durability. It is a set of properties that guarantee that database transactions are processed
+reliably.
+
+Atomicity: Ensures that a transaction is treated as a single "unit," which is either executed in its entirety or not at all.
+
+Consistency: Ensures that a transaction brings the database from one valid state to another.
+
+Isolation: Ensures that concurrent execution of transactions doesn't result in inconsistencies.
+
+Durability: Ensures that once a transaction has been committed, it will remain committed even in the event of a system failure.
+
+Together, these properties provide a framework for ensuring data integrity and consistency across multiple transactions, even in the event of system failures. RDBMSs
+are usually designed to implement these properties and maintain the ACID properties of transactions.
+
+
+
+
+CAP theorem
+The CAP theorem, also known as Brewer's theorem, states that in distributed systems, it is impossible for a system to simultaneously provide all three of the following guarantees:
+
+Consistency: all nodes in the system see the same data at the same time
+Availability: every request receives a response, without guarantee that it contains the most recent version of the information
+Partition tolerance: the system continues to function even when network partitions occur
+The theorem states that a distributed system can have at most two of these guarantees at the same time.
+
+For example, a distributed database that prioritizes consistency and partition tolerance may not be able to guarantee high availability during network partitions.
+On the other hand, a distributed database that prioritizes availability and partition tolerance may not be able to guarantee consistency of data across all nodes.
+
+
+
+
+
+Storage Type of Database :
+
+There are several types of storage used in databases, each with its own advantages and disadvantages. Some of the most common types of storage used in databases
+include:
+
+Relational databases: These use a relational model to store data in tables with rows and columns. Examples include MySQL, Oracle, and Microsoft SQL Server.
+
+Document databases: These use a document-oriented model to store data in semi-structured documents, such as JSON or XML. Examples include MongoDB and Couchbase.
+
+Key-value databases: These use a key-value pair to store data, where each piece of data is associated with a unique key. Examples include Redis and Riak.
+
+Column-family databases: These use a column-family model to store data, where data is stored in column families rather than tables. Examples include Apache Cassandra
+and Hbase.
+
+Graph databases: These use a graph data model to store data, where data is stored as nodes and edges in a graph. Examples include Neo4j and OrientDB.
+
+Time Series databases: These are optimized for time series data and typically used for IoT, finance and other applications where time series data is prevalent.
+Examples include InfluxDB, OpenTSDB and TimescaleDB.
+
+The choice of storage type depends on the specific requirements of the application and the type of data that needs to be stored.
+
+It's important to note that the CAP theorem is not a strict rule and it's not always possible to make a clear distinction between the three properties. In practice,
+different systems will prioritize the three properties in different ways depending on their use case.
+
+
+
