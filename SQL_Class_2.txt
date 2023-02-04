@@ -47,25 +47,6 @@ INSERT into employee VALUES(1,'shubham','nna','2022-11-11');
 
 SELECT*from employee;
 
-
-
-----**Create table with PRIMARY KEY****
-
-CREATE Table persons
-(
-    id INT,
-    name VARCHAR(50),
-    age INT,
-    constraint pk PRIMARY KEY(id)
-    ---primary key (id)
-);
-
-INSERT into persons VALUES(1,'shubham',25);
-
-
-
-SELECT*from employee;
-
 ----**Create table with PRIMARY KEY****
 
 CREATE Table persons
@@ -106,7 +87,7 @@ create Table customer
 create Table orders
 (
     order_id INT,
-    order_num INT,
+    amount INT,
     customer_id INT,
     constraint pk PRIMARY KEY(order_id),
     constraint fk FOREIGN KEY(customer_id) REFERENCES customer(cust_id)
@@ -142,6 +123,8 @@ insert into employee VALUES(1,'shubham',25,'2022-11-10',10000,'bhagalpur');
 
 insert into employee VALUES(2,'sam',35,'2022-08-10',10800,'goa');
 insert into employee VALUES(3,'manish',29,'2022-11-01',10070,'patna');
+
+
 insert into employee VALUES(4,'rahul',30,'2022-11-12',17000,'lucknow');
 insert into employee VALUES(5,'amit',32,'2021-11-10',12000,'jamalpur');
 insert into employee VALUES(6,'shalu',20,'2020-11-10',12546,'punjab');
