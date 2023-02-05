@@ -25,8 +25,8 @@ select * from employee where age=20;
 
 # filter the record where age of employees is not equal to 20
 # we can use != or we can use <>
-select * from employee where age != 20;
-select * from employee where age <> 20;
+select * from employee where age != 20;   # != it means not eual to
+select * from employee where age <> 20;  # <> it means not equal to 
 
 # find those employees who joined the company on 2021-08-11 and their salary is less than 11500
 select * from employee where hiring_date = '2021-08-11' and salary<11500;
