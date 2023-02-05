@@ -125,6 +125,9 @@ from employee group by age;
 # Write a query to find the country where only 1 order was placed
 select country from orders_data group by country having count(*)=1;
 
+# Write a query to find the country,state wise where only 1 order was placed
+SELECT country,state,COUNT(*) AS state_wise_orders FROM orders_data GROUP BY country,state HAVING COUNT(*)=1 ORDER BY country,state;
+
 # Where Clause and Group By Clause --> What should be the proper sequence??
 # Answer -> Where Clause and then Group By ??
 
