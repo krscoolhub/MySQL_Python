@@ -105,6 +105,9 @@ select * from orders_data;
 # calculate total order placed country wise
 select country, count(*) as order_count_by_each_country from orders_data group by country;
 
+# calculate total order placed country wise
+SELECT country,state,COUNT(*) as state_wise_orders FROM orders_data GROUP BY country,state ORDER BY country;
+
 # Write a query to find the total salary by each age group 
 select * from employee;
 select age, sum(salary) as total_salary_by_each_age_group from employee group by age;
